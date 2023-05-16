@@ -1,99 +1,109 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import Button from '../button/button';
-import PortfolioInfo from '../portfolioInfo/portfolioInfo';
+import Button from "../button/button";
+import PortfolioInfo from "../portfolioInfo/portfolioInfo";
 
-import card_1 from '../../assets/images/card_1.png';
-import card_3 from '../../assets/images/card_3.png';
+import card_1 from "../../assets/images/card_1.png";
+import card_3 from "../../assets/images/card_3.png";
 
-import './portfolio.scss';
+import "./portfolio.scss";
 
 const Portfolio = () => {
-    const buttonsData = [
-        { name: 'all', label: 'All' },
-        { name: 'ui', label: 'Ui' },
-        { name: 'code', label: 'Code' }
-    ];
+  const buttonsData = [
+    { name: "all", label: "All" },
+    { name: "ui", label: "Ui" },
+    { name: "code", label: "Code" },
+  ];
 
-    const [filter, setFilter] = useState('all');
-    const [isAnimationEnabled, setIsAnimationEnabled] = useState(false);
+  const [filter, setFilter] = useState("all");
 
-    const onFilter = (filter) => {
-        setIsAnimationEnabled(true);
-        setFilter(filter);
-    };
+  const onFilter = (filter) => {
+    setFilter(filter);
+  };
 
-    const projects = [
-        {
-            image: card_1,
-            filterTags: ['all', 'ui'],
-            title: 'Some text',
-            text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis',
-            url: 'https://somesite.com'
-        },
-        {
-            image: card_3,
-            filterTags: ['all', 'code'],
-            title: 'Some text',
-            text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis',
-            url: 'https://somesite.com'
-        },
-        {
-            image: card_1,
-            filterTags: ['all', 'ui'],
-            title: 'Some text',
-            text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis',
-            url: 'https://somesite.com'
-        },
-        {
-            image: card_3,
-            filterTags: ['all', 'code'],
-            title: 'Some text',
-            text: 'Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis',
-            url: 'https://somesite.com'
-        }
-    ];
+  const projects = [
+    {
+      image: card_1,
+      filterTags: ["all", "ui"],
+      title: "Some text",
+      text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis",
+      url: "https://somesite.com",
+    },
+    {
+      image: card_3,
+      filterTags: ["all", "code"],
+      title: "Some text",
+      text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis",
+      url: "https://somesite.com",
+    },
+    {
+      image: card_1,
+      filterTags: ["all", "ui"],
+      title: "Some text",
+      text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis",
+      url: "https://somesite.com",
+    },
+    {
+      image: card_3,
+      filterTags: ["all", "code"],
+      title: "Some text",
+      text: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis",
+      url: "https://somesite.com",
+    },
+  ];
 
-    const filteredProjects = projects.filter((project) => {
-        return filter === 'all' || project.filterTags.includes(filter);
-    });
+  const filteredProjects = projects.filter((project) => {
+    return filter === "all" || project.filterTags.includes(filter);
+  });
 
-    return (
-        <>
-            <div className="portfolio">
-                <ul className="tabs-list">
-                    {buttonsData.map(({ name, label }) => (
-                        <li key={name} className="tabs-list__item">
-                            <Button
-                                className={filter === name ? 'portfolio__btn active' : 'portfolio__btn'}
-                                onClick={() => onFilter(name)}
-                                text={label}
-                            />
-                        </li>
-                    ))}
-                </ul>
-                <ul className={`portfolio-list ${filter}`}>
-                    {filteredProjects.map((project, index) => (
-                        <li
-                            key={index}
-                            className={`portfolio-list__item ${!project.filterTags.includes(filter) && 'hidden '} ${isAnimationEnabled ? 'fade-in' : ''}`}
-                        >
-                            <img src={project.image} alt="Project screenshot" />
-                            <PortfolioInfo
-                                    title={project.title}
-                                    text={project.text}
-                                    url={project.url}
-                            />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="portfolio">
+        <ul className="tabs-list">
+          {buttonsData.map(({ name, label }) => (
+            <li key={name} className="tabs-list__item">
+              <Button
+                className={
+                  filter === name ? "portfolio__btn active" : "portfolio__btn"
+                }
+                onClick={() => onFilter(name)}
+                text={label}
+              />
+            </li>
+          ))}
+        </ul>
+        <TransitionGroup component="ul" className="portfolio-list">
+          {filteredProjects.map((project, index) => (
+            <CSSTransition
+              key={index}
+              timeout={300}
+              classNames="portfolio-list-item"
+            >
+              <li className="portfolio-list__item">
+                <CSSTransition
+                  in={true}
+                  appear={true}
+                  timeout={500}
+                  classNames="scale-effect"
+                >
+                  <img src={project.image} alt="Project screenshot" />
+                </CSSTransition>
+                <PortfolioInfo
+                  title={project.title}
+                  text={project.text}
+                  url={project.url}
+                />
+              </li>
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+      </div>
+    </>
+  );
 };
 
 export default Portfolio;
-
 
 // import './portfolio.scss';
 // import Button from '../button/button';
@@ -130,14 +140,14 @@ export default Portfolio;
 //                     {buttonsData.map(({ name, label }) => {
 //                         return (
 //                             <li className='tabs-list__item'>
-//                                 <Button 
-//                                 className={filter === name ? "portfolio__btn active" : "portfolio__btn"} 
-//                                 key={name} 
-//                                 onClick={() => onFilter(name)} 
-//                                 text={label} 
+//                                 <Button
+//                                 className={filter === name ? "portfolio__btn active" : "portfolio__btn"}
+//                                 key={name}
+//                                 onClick={() => onFilter(name)}
+//                                 text={label}
 //                                 />
 //                             </li>
-                            
+
 //                         );
 //                     })}
 //                 </ul>
@@ -148,21 +158,21 @@ export default Portfolio;
 //                         onMouseLeave={handleMouseLeave}>
 //                         <img src={card_1} alt="Project screenshot" />
 //                         {hoveredIndex === 0 && (
-//                             <PortfolioInfo 
-//                                 title="Some text" 
+//                             <PortfolioInfo
+//                                 title="Some text"
 //                                 text="Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis "
 //                                 url="https://somesite.com"
 //                             />
 //                         )}
-//                     </li>   
+//                     </li>
 //                     <li
 //                         className={`portfolio-list__item ${filter !== "all" && filter !== "code" && "hidden"}`}
 //                         onMouseEnter={() => handleMouseEnter(1)}
 //                         onMouseLeave={handleMouseLeave}>
 //                         <img src={card_3} alt="Project screenshot" />
 //                         {hoveredIndex === 1 && (
-//                             <PortfolioInfo 
-//                             title="Some text" 
+//                             <PortfolioInfo
+//                             title="Some text"
 //                             text="Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis "
 //                             url="https://somesite.com"
 //                         />
@@ -174,8 +184,8 @@ export default Portfolio;
 //                         onMouseLeave={handleMouseLeave}>
 //                         <img src={card_1} alt="Project screenshot" />
 //                         {hoveredIndex === 2 && (
-//                             <PortfolioInfo 
-//                             title="Some text" 
+//                             <PortfolioInfo
+//                             title="Some text"
 //                             text="Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis "
 //                             url="https://somesite.com"
 //                             />
@@ -187,8 +197,8 @@ export default Portfolio;
 //                         onMouseLeave={handleMouseLeave}>
 //                         <img src={card_3} alt="Project screenshot" />
 //                         {hoveredIndex === 3 && (
-//                             <PortfolioInfo 
-//                             title="Some text" 
+//                             <PortfolioInfo
+//                             title="Some text"
 //                             text="Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis "
 //                             url="https://somesite.com"
 //                             />

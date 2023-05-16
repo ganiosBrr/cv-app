@@ -1,0 +1,12 @@
+@use "../../assets/styles/sass/abstracts/vars" as *;
+
+.cv {
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 120%;
+    color: $base-color;
+    margin-bottom: 40px;
+  }
+}

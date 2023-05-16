@@ -1,38 +1,38 @@
+@use "../../assets/styles/sass/abstracts/vars" as *;
+
 .nav {
-    width: 250px;
+  width: 250px;
 }
 .nav-list {
-    list-style-type: none;
-    &__item {
-        font-family: 'Open-Sans';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 120%;
-        padding: 18px 20px;
+  list-style-type: none;
+  &__item {
+    font-family: $base-font;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    padding: 18px 20px;
 
-        &:nth-child(2)>a>span {
-            margin-right: 15px;
-        }
+    &:nth-child(2) > a > span {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $link-color;
+    cursor: pointer;
+
+    &.active {
+      color: $base-color;
     }
 
-    &__link {
-        text-decoration: none;
-        color:#667081;
-        cursor: pointer;
-
-        &.active {
-            color:#26C17E;
-        }
-
-        &:hover {
-            color: #26C17E;
-        }
+    &:hover {
+      color: $base-color;
     }
+  }
 
-    &__icon {
-        margin-right: 20px;
-    }
+  &__icon {
+    margin-right: 20px;
+  }
 }
-
-  

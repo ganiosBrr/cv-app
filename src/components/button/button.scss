@@ -1,61 +1,62 @@
+@use "../../assets/styles/sass/abstracts/vars" as *;
+
 .btn {
-    width: 127px;
-    height: 40px;
-    margin: 0 auto;
-    font-family: 'Open-Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 120%;
-    border: none;
-    border-radius: 5px;
-    color: #FFFFFF;
-    text-align: center;
-    cursor: pointer;
+  width: 127px;
+  height: 40px;
+  margin: 0 auto;
+  font-family: $base-font;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  border: none;
+  border-radius: 5px;
+  color: $white-color;
+  text-align: center;
+  cursor: pointer;
 
-    &-primary {
-        background: #222935;
-        &:hover {
-            background: #26C17E;
-        }
+  &-primary {
+    background: $side-color;
+    &:hover {
+      background: $base-color;
+    }
+  }
+
+  &-action {
+    width: 30px;
+    height: 30px;
+    background: $side-color;
+
+    &--toggle {
+      transition: transform 0.5s ease;
+      transform: translateX(0);
+      position: absolute;
+      top: 20px;
+      left: 246px;
+      z-index: 1;
     }
 
-    &-action {
-        width: 30px;
-        height: 30px;
-        background: #222935;
-
-        &--toggle {
-            transition: transform 0.5s ease;
-            transform: translateX(0);
-            position: absolute;
-            top: 20px;
-            left: 246px;
-            z-index: 1;
-        }
-
-        &--up {
-            position: fixed;
-            bottom: 0;
-            right: 30px;
-        }
-
-        &--back {
-            width: 100px;
-            position: absolute;
-            bottom: 0;
-            left: 45px;
-            height: 20px;
-            margin-bottom: 30px;
-            color: #667081;
-            &:hover {
-                color: #26C17E;
-            }
-        }
+    &--up {
+      position: fixed;
+      bottom: 0;
+      right: 30px;
     }
 
+    &--back {
+      width: 100px;
+      position: absolute;
+      bottom: 0;
+      left: 45px;
+      height: 20px;
+      margin-bottom: 30px;
+      color: $link-color;
+      &:hover {
+        color: $base-color;
+      }
+    }
+  }
 }
 
 .moveButton {
-    transform: translateX(-250px);
+  transform: translateX(-250px);
 }

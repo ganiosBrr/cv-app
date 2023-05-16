@@ -1,78 +1,87 @@
+@use "../../assets/styles/sass/abstracts/vars" as *;
+
 .portfolio {
-    margin-bottom: 50px;
-    &-list {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        
-        &__item {
-            flex: 0 0 308px;
-            width: 308px;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            & img {
-                width: 100%;
-                height: 190px;
-                padding-right: 5px;
-            }
+  margin-bottom: 50px;
+  &-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 
-            &:hover {
-                .portfolio-info {
-                    opacity: 1;
-                    top: 0;
-                }
-            }
+    &__item {
+      flex: 0 0 308px;
+      width: 308px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+      & img {
+        width: 100%;
+        height: 190px;
+        padding-right: 5px;
+      }
+
+      &:hover {
+        .portfolio-info {
+          opacity: 1;
+          top: 0;
         }
+      }
     }
-      
-    &__btn {
-        background: #FFFFFF;
-        border: none;
-        cursor: pointer;
-        font-family: 'Open-Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
+  }
 
-        &.active {
-            color: #26C17E;
-        }
+  &__btn {
+    background: $white-color;
+    border: none;
+    cursor: pointer;
+    font-family: $base-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
 
-        &:hover {
-            color: #26C17E;
-        }
+    &.active {
+      color: $base-color;
     }
-}
 
-.fade-in {
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px);
-    transition-property: opacity;
-    transition-duration: 0.4s;
-    transition-delay: 500ms;
+    &:hover {
+      color: $base-color;
+    }
+  }
 }
 
 .tabs-list {
-    display: flex;
-    gap: 5px;
-    position: relative;
+  display: flex;
+  gap: 5px;
+  position: relative;
 
-    &__item {
-        &:not(:last-child)::after {
-            content: "/";
-            position: absolute;
-        }
+  &__item {
+    &:not(:last-child)::after {
+      content: "/";
+      position: absolute;
     }
+  }
 }
 
+//
+.portfolio-list-item-enter {
+    opacity: 0;
+    transform: scale(0.5);
+  }
   
-.hidden {
-    display: none;
-}
-
-
-      
+  .portfolio-list-item-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .portfolio-list-item-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .portfolio-list-item-exit-active {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 300ms, transform 300ms;
+  }

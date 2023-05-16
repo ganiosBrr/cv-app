@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, scroller } from 'react-scroll';
+import { Link, scroller } from "react-scroll";
 
 import {
   faUser,
@@ -18,37 +18,37 @@ const Navigation = () => {
     {
       id: "info-section",
       icon: faUser,
-      text: "About Me"
+      text: "About Me",
     },
     {
       id: "education-section",
       icon: faGraduationCap,
-      text: "Education"
+      text: "Education",
     },
     {
       id: "experience-section",
       icon: faPen,
-      text: "Experience"
+      text: "Experience",
     },
     {
       id: "skills-section",
       icon: faGem,
-      text: "Skills"
+      text: "Skills",
     },
     {
       id: "portfolio-section",
       icon: faSuitcase,
-      text: "Portfolio"
+      text: "Portfolio",
     },
     {
       id: "address-section",
       icon: faPaperPlane,
-      text: "Contacts"
+      text: "Contacts",
     },
     {
       id: "feedback-section",
       icon: faComment,
-      text: "Feedbacks"
+      text: "Feedbacks",
     },
   ];
 
@@ -63,7 +63,7 @@ const Navigation = () => {
   return (
     <nav className="nav">
       <ul className="nav-list">
-        {navItems.map((item, index) => {
+        {navItems.map((item) => {
           return (
             <li className="nav-list__item" key={item.id}>
               <Link
@@ -79,9 +79,7 @@ const Navigation = () => {
                 <span className="nav-list__icon">
                   {<FontAwesomeIcon icon={item.icon} />}
                 </span>
-                <span className="nav-list__text">
-                  {item.text}
-                </span>
+                <span className="nav-list__text">{item.text}</span>
               </Link>
             </li>
           );

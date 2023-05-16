@@ -1,41 +1,40 @@
-.panel {
-    &__photoBox {
-        text-align: center;
-        color: #FFFFFF;
-    }
-}
+@use "../../assets/styles/sass/abstracts/vars" as *;
 
-.user-img {
+.panel {
+  &__photoBox {
+    text-align: center;
+    color: $white-color;
+  }
+}
+.panel__photoBox .user-img {
   width: 100px;
   height: 100px;
   margin-top: 20px;
 }
 
-.user-name {
+.panel__photoBox .user-name {
   font-size: 16px;
   margin-bottom: 60px;
 }
 
 .panel-transition-enter {
-    opacity: 0;
-    transform: translateX(-250px);
-  }
-  
-  .panel-transition-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
-  }
-  
-  .panel-transition-exit {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .panel-transition-exit-active {
-    opacity: 0;
-    transform: translateX(-250px);
-    transition: opacity 300ms, transform 300ms;
-  }
+  opacity: 0;
+  transform: translateX(-250px);
+}
 
+.panel-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
 
+.panel-transition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.panel-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-250px);
+  transition: opacity 300ms, transform 300ms;
+}

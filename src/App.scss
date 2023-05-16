@@ -1,11 +1,12 @@
 @use "./assets/styles/sass/abstracts/reset";
 @use "./assets/styles/sass/abstracts/media-queries";
+@use './assets/styles/sass/abstracts/vars' as *;
 
 .cv {
 	display: flex;
 	position: relative;
-	font-family: 'Open-Sans';
-	color: #222935;
+	font-family: $base-font;
+	color: $side-color;
   }
 
 .cv-content {
@@ -30,6 +31,6 @@
 .cv-panel {
 	width: 250px;
 	height: 100%;
-	background: #222935;
+	background: $side-color;
 	position: fixed;
 }
