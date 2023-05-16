@@ -1,0 +1,28 @@
+.address {
+    margin-bottom: 50px;
+    &__icon {
+        width: 30px;
+        color: #26C17E;
+        margin-right: 20px;
+    }
+
+    &__info {
+        &-link {
+            color: #667081;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-list {
+        &__item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    }
+}
+

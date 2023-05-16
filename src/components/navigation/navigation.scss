@@ -1,0 +1,38 @@
+.nav {
+    width: 250px;
+}
+.nav-list {
+    list-style-type: none;
+    &__item {
+        font-family: 'Open-Sans';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        padding: 18px 20px;
+
+        &:nth-child(2)>a>span {
+            margin-right: 15px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color:#667081;
+        cursor: pointer;
+
+        &.active {
+            color:#26C17E;
+        }
+
+        &:hover {
+            color: #26C17E;
+        }
+    }
+
+    &__icon {
+        margin-right: 20px;
+    }
+}
+
+  

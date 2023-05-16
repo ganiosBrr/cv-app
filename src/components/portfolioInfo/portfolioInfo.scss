@@ -1,0 +1,24 @@
+.portfolio-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 194px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    padding: 20px 15px;
+    background: hsla(0,0%,100%,.95);
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    top: 100%;
+    opacity: 0;
+    transition: all .5s ease 0s;
+
+    &__title {
+        color: #26C17E;
+    }
+    
+    &__link {
+        color: #26C17E;
+    }
+}

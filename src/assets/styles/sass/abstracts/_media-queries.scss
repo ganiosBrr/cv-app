@@ -1,0 +1,139 @@
+@media (max-width: 767px) {
+
+    .panel__photoBox .user-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .cv > .cv-panel {
+        width: 54px;
+        transition: all 0.3s ease;
+    }
+
+    .cv > .cv-content {
+        left: 60px;
+    }
+
+    body .nav {
+        width: 54px;
+        margin: 0;
+
+        &-list {
+            &__text {
+                display: none;
+            }
+        }
+        transition: all 0.3s ease;
+    }
+
+    .btn-action--toggle {
+        left: 50px;
+    }
+
+    .btn-action--back {
+        width: 40px;
+        height: 30px;
+        left: 6px;
+        color: #fff;
+        background: #26C17E;
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .btn-action--back > .btn-back--text {
+        display: none;
+    }
+
+    .moveButton {
+        transform: translateX(-50px);
+    }
+
+    .timeline-event__text {
+        font-size: 13px;
+    }
+
+    .timeline-event {
+        overflow: auto;
+    }
+    .cv > .panel-transition-enter-done {
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+    }
+    .panel-transition-enter {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 300ms ease;
+      }
+      
+      .panel-transition-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 300ms, transform 300ms;
+      }
+      
+      .panel-transition-exit {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .panel-transition-exit-active {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 300ms, transform 300ms;
+      }
+    
+  }
+  
+  /* Media query for screens between 768px and 1023px */
+  @media (min-width: 768px) and (max-width: 900px) {
+	.cv .cv-panel {
+        transition: all 0.3s ease;
+    }
+    
+    body .nav {
+        transition: all 0.3s ease;
+    }
+    .cv-content  {
+        width: 40%;
+    }
+  }
+
+  @media (min-width: 900px) and (max-width: 1023px) {
+    .cv-content  {
+        width: 50%;
+    }
+  }
+
+  @media (min-width: 1023px) and (max-width: 1200px) {
+    .cv-content  {
+        width: 60%;
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1300px) {
+    .cv-content  {
+        width: 70%;
+    }
+  }
+
+  @media (min-width: 1300px) and (max-width: 1500px) {
+    .cv-content  {
+        width: 80%;
+    }
+    .portfolio-list__item {
+
+    }
+  }
+
+
+  @media (min-width: 1500px) and (max-width: 1700px) {
+    .cv-content  {
+        width: 90%;
+    }
+  }
+  
