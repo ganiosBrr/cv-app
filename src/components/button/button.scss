@@ -30,7 +30,7 @@
     &--toggle {
       transition: transform 0.5s ease;
       transform: translateX(0);
-      position: absolute;
+      position: fixed;
       top: 20px;
       left: 246px;
       z-index: 1;
