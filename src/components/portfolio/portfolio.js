@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import Button from "../button/button";
 import PortfolioInfo from "../portfolioInfo/portfolioInfo";
@@ -73,31 +72,28 @@ const Portfolio = () => {
             </li>
           ))}
         </ul>
-        <TransitionGroup component="ul" className="portfolio-list">
+        <ul className="portfolio-list">
           {filteredProjects.map((project, index) => (
-            <CSSTransition
-              key={index}
-              timeout={300}
-              classNames="portfolio-list-item"
-            >
-              <li className="portfolio-list__item">
-                <CSSTransition
-                  in={true}
-                  appear={true}
-                  timeout={500}
-                  classNames="scale-effect"
-                >
-                  <img src={project.image} alt="Project screenshot" />
-                </CSSTransition>
-                <PortfolioInfo
-                  title={project.title}
-                  text={project.text}
-                  url={project.url}
-                />
-              </li>
-            </CSSTransition>
+            <li className="portfolio-list__item" key={index}>
+              <img src={project.image}
+                alt="Project screenshot"
+                style={{
+                  opacity: 0,
+                  transition: "opacity 1.5s ease",
+                  animationDelay: `${index * 0.1}s`,
+                }}
+                onLoad={(e) => {
+                  e.target.style.opacity = 1;
+                }} 
+              />
+              <PortfolioInfo
+                title={project.title}
+                text={project.text}
+                url={project.url}
+              />
+            </li>
           ))}
-        </TransitionGroup>
+        </ul>
       </div>
     </>
   );
