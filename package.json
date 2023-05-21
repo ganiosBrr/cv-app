@@ -42,12 +42,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:coverage"
+      "pre-push": "npm run test"
     }
   },
   "eslintConfig": {
