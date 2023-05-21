@@ -24,7 +24,7 @@ const Feedback = ({ photo }) => {
       <ul className="feedback-list">
         {feedbackData.map(({ text, name, link }, index) => {
           return (
-            <li key={index} className="feedback-list__item">
+            <li key={index} className="feedback-list__item" data-testid="feedback-item">
               <blockquote className="feedback__quote">{text}</blockquote>
               <div className="feedback__user-info">
                 <img

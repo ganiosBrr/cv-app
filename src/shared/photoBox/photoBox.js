@@ -9,7 +9,7 @@ const PhotoBox = ({ className, name, title, description, avatar }) => {
       {title && <h3 className="user-title">{title}</h3>}
       {breakLine.map((item, index) => {
         return (
-          <p key={index} className="user-desc">
+          <p key={index} className="user-desc" data-testid="desc">
             {item}
           </p>
         );

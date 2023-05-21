@@ -63,16 +63,16 @@
   }
 }
 
-//
-.portfolio-list__item {
-  opacity: 1;
-  transition: opacity 1.5s ease;
-  animation: fadeIn 1.5s ease;
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+  .portfolio-list-item-enter {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  
+  .portfolio-list-item-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
   }
   100% {
     opacity: 1;

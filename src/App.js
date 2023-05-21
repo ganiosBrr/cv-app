@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { CSSTransition } from 'react-transition-group';
@@ -12,14 +13,28 @@ import Expertise from "./components/expertise/expertise";
 import Portfolio from "./components/portfolio/portfolio";
 import Address from "./components/address/address";
 import Feedback from "./components/feedback/feedback";
+import Spinner from './shared/spinner/spinner';
+import Error from './shared/error/error';
 
-import { experienceData, educationData, cvInfo } from './static-data/staticData';
+import { experienceData, cvInfo } from './static-data/staticData';
+
+import {fetchEducations} from "./features/education/educationSlice";
 
 import './App.scss';
+import Skills from './components/skills/skills';
 
 function App() {
   const [panelRender, setPanelRender] = useState(true);
   const panelRef = useRef(null);
+
+  const dispatch = useDispatch();
+  const education = useSelector(state => state.education.data);
+  const isLoading = useSelector(state => state.education.isLoading);
+  const error = useSelector(state => state.education.error)
+
+  useEffect(() => {
+    dispatch(fetchEducations());
+  }, [dispatch]);
 
   const content = [
     {
@@ -29,7 +44,7 @@ function App() {
       title: "About me"
     },
     {
-      component: <Timeline data={educationData}/>,
+      component: <Timeline data={education}/>,
       className: "__timeline",
       id: "education",
       title: "Education"
@@ -39,6 +54,12 @@ function App() {
       className: "__expirience",
       id: "experience",
       title: "Experience"
+    },
+    {
+      component: <Skills/>,
+      className: "__skills",
+      id: "skills",
+      title: "Skills"
     },
     {
       component: <Portfolio/>,
@@ -92,10 +113,22 @@ function App() {
 
         <div className={panelRender ? "cv-content cv-content--right" : "cv-content cv-content--left"}>
           {content.map(item => {
+            const errorMessage = "Something went wrong; please review your server connection!";
+            if (item.id === "education") {
+              return (
+                <Box
+                  title={item.title}
+                  content={isLoading ? <Spinner /> : error ? <Error message={errorMessage} className="error-wrapper"/> : item.component}
+                  className={`cv-content${item.className}`}
+                  id={`${item.id}-section`}
+                  key={item.id}
+                />
+              );
+            }
             return(
               <Box 
                 title={item.title} 
-                content={item.component}
+                content={item.id === "education" && isLoading ? <Spinner/> : item.component}
                 className={`cv-content${item.className}`}
                 id={`${item.id}-section`}
                 key={item.id}

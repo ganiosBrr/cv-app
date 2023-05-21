@@ -17,8 +17,20 @@
 
   &-primary {
     background: $side-color;
+
+    &--edit {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     &:hover {
       background: $base-color;
+    }
+
+    &.disabled {
+      background: #667080;
+      color: #000;
     }
   }
 
