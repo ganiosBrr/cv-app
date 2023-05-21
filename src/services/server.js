@@ -5,6 +5,7 @@ export function makeServer({ environment = "test" } = {}) {
         environment,
         models: {
             education: Model,
+            skill: Model,
         },
         seeds(server) {
             server.create("education", {
@@ -27,7 +28,17 @@ export function makeServer({ environment = "test" } = {}) {
             this.namespace = "api";
             this.get("/educations", (schema) => {
                 return schema.educations.all();
-            },{ timing: 4000 })
+            },{ timing: 4000 });
+
+            this.get("/skills", (schema) => {
+                return schema.skills.all();
+            });
+            
+            this.post("/skills", (schema, request) => {
+                let skillData = JSON.parse(request.requestBody);
+                let skill = schema.skills.create(skillData);
+                return skill;
+            })
         }
     })
 

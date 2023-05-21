@@ -1,0 +1,98 @@
+.cv-content__skills {
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 20px 20px;
+    border: 1px solid #26C17E;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    &__input {
+        width: 270px;
+        height: 40px;
+        border: 1px solid #667081;
+        border-radius: 5px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        outline: none;
+
+        &.error{
+            border: 2px solid red;
+        }
+    }
+
+    &__error {
+        color: red;
+        border-color: red;
+        margin-bottom: 20px; 
+    }
+}
+
+
+.scale {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    color: #667081;
+  }
+
+.scale-range {
+    width: 101%;
+    border-bottom: 1px solid #667081;
+    position: relative;
+}
+
+.range {
+    display: block;
+    border-left: 1px solid #667081;
+    height: 10px;
+    position: absolute;
+    top: -10px;
+    &.beginner-range {
+        left: 0%;
+    }
+    &.proficient-range {
+        left: 25%;
+    }
+    &.expert-range {
+        left: 75%;
+    }
+    &.master-range {
+        left: 100%;
+    }
+    
+}
+
+.scale-level {
+    position: relative;
+}
+
+.level {
+    position: absolute;
+
+    &.beginner-level {
+        left: 0;
+    }
+    &.proficient-level {
+        left: 23%;
+    }
+    &.expert-level {
+        left: 74%;
+    }
+    &.master-level {
+        left: 98%;
+    }
+}
+
+.skills-list {
+    &__item {
+        background: #26C17E;
+        margin-bottom: 15px;
+        color: #FFFFFF;
+        padding: 5px 0 5px 15px;
+    }
+}

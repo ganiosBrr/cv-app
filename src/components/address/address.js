@@ -45,8 +45,8 @@ const Address = () => {
       <ul className="address-list">
         {addressData.map(({ icon, content, heading, href }, index) => {
           return (
-            <li key={index} className="address-list__item">
-              <div className="address__icon fa-2xl">{icon}</div>
+            <li key={index} className="address-list__item" data-testid="address-item">
+              <div className="address__icon fa-2xl" data-testid="icon">{icon}</div>
               <div className="address__info">
                 {heading && <h6>{heading}</h6>}
                 <a href={href} className="address__info-link" target="_blank" rel="noopener noreferrer">

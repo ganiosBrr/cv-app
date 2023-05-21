@@ -6,7 +6,7 @@ const Expertise = ({ data }) => {
       <ul className="experience-list">
         {data.map((item, index) => {
           return (
-            <li className="experience-list__item" key={index}>
+            <li className="experience-list__item" key={index} data-testid="expertise-item">
               <div className="experience-date">
                 <h3>{item.info.company}</h3>
                 <span>{item.date}</span>

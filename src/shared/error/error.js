@@ -1,9 +1,9 @@
 import "./error.scss";
 
-const Error = () => {
+const Error = ({message, className}) => {
     return(
-        <div className="error-wrapper">
-            <p>Something went wrong; please review your server connection! </p>
+        <div className={className} data-testid="error-component">
+            <p>{message}</p>
         </div>
     );
 }

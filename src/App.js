@@ -21,6 +21,7 @@ import { experienceData, cvInfo } from './static-data/staticData';
 import {fetchEducations} from "./features/education/educationSlice";
 
 import './App.scss';
+import Skills from './components/skills/skills';
 
 function App() {
   const [panelRender, setPanelRender] = useState(true);
@@ -53,6 +54,12 @@ function App() {
       className: "__expirience",
       id: "experience",
       title: "Experience"
+    },
+    {
+      component: <Skills/>,
+      className: "__skills",
+      id: "skills",
+      title: "Skills"
     },
     {
       component: <Portfolio/>,
@@ -106,11 +113,12 @@ function App() {
 
         <div className={panelRender ? "cv-content cv-content--right" : "cv-content cv-content--left"}>
           {content.map(item => {
+            const errorMessage = "Something went wrong; please review your server connection!";
             if (item.id === "education") {
               return (
                 <Box
                   title={item.title}
-                  content={isLoading ? <Spinner /> : error ? <Error /> : item.component}
+                  content={isLoading ? <Spinner /> : error ? <Error message={errorMessage} className="error-wrapper"/> : item.component}
                   className={`cv-content${item.className}`}
                   id={`${item.id}-section`}
                   key={item.id}

@@ -65,7 +65,7 @@ const Navigation = () => {
       <ul className="nav-list">
         {navItems.map((item) => {
           return (
-            <li className="nav-list__item" key={item.id}>
+            <li className="nav-list__item" key={item.id} data-testid="link">
               <Link
                 className="nav-list__link"
                 activeClass="active"
