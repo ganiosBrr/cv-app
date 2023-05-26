@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "../button/button";
+import Button from "../../shared/button/button";
 import PortfolioInfo from "../portfolioInfo/portfolioInfo";
 
 import card_1 from "../../assets/images/card_1.png";

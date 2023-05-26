@@ -4,7 +4,7 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
 import PhotoBox from "../../shared/photoBox/photoBox";
 import Navigation from "../navigation/navigation";
-import Button from "../button/button";
+import Button from "../../shared/button/button";
 
 import "./panel.scss";
 

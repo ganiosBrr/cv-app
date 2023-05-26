@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 
 import Box from './shared/box/box';
 import Info from './components/info/info';
-import Button from './components/button/button';
+import Button from './shared/button/button';
 import Panel from './components/panel/panel';
 import Timeline from "./components/timeline/timeline";
 import Expertise from "./components/expertise/expertise";

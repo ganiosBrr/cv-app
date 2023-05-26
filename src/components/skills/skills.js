@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
-import Button from "../button/button.js";
+import Button from "../../shared/button/button.js";
 import { addSkill, fetchSkills, toggleForm } from "../../features/skills/skillsSlice.js";
 import "./skills.scss";
 import { useFormik } from "formik";

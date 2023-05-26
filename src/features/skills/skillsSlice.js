@@ -75,9 +75,9 @@ const skillsSlice = createSlice({
         builder.addCase(addSkill.fulfilled, (state, action) => {
             if (Array.isArray(state.skills)) {
                 state.skills.push(action.payload);
-              } else {
+            } else {
                 state.skills = [action.payload];
-              }
+            }
         });
         builder.addCase(fetchSkills.fulfilled, (state, action) => {
             state.skills = action.payload;
