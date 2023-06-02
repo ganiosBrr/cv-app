@@ -63,9 +63,7 @@ const Portfolio = () => {
           {buttonsData.map(({ name, label }) => (
             <li key={name} className="tabs-list__item">
               <Button
-                className={
-                  filter === name ? "portfolio__btn active" : "portfolio__btn"
-                }
+                className="portfolio__btn"
                 onClick={() => onFilter(name)}
                 text={label}
               />

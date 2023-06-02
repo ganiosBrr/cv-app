@@ -4,10 +4,11 @@ import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import "./timeline.scss";
 
 const Timeline = ({ data }) => {
+  const sortedData = [...data].sort((a, b) => b.date - a.date);
   return (
     <div className="timeline">
       <ul className="timeline-list">
-        {data.map((item, index) => {
+        {sortedData.map((item, index) => {
           return (
             <li className="timeline-list__item" key={index}>
               <div className="timeline-date">{item.date}</div>

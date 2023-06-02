@@ -64,7 +64,6 @@ const skillsSlice = createSlice({
     initialState: {
         formRender: false,
         skills: [],
-        // skills: JSON.parse(localStorage.getItem("skills") || "[]"), 
     },
     reducers: {
         toggleForm: (state) => {
@@ -73,7 +72,7 @@ const skillsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(addSkill.fulfilled, (state, action) => {
-            if (Array.isArray(state.skills)) {
+            if (state.skills.length > 0) {
                 state.skills.push(action.payload);
             } else {
                 state.skills = [action.payload];

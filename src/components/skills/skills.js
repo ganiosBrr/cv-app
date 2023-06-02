@@ -2,11 +2,11 @@ import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { useFormik } from "formik";
 
 import Button from "../../shared/button/button.js";
 import { addSkill, fetchSkills, toggleForm } from "../../features/skills/skillsSlice.js";
 import "./skills.scss";
-import { useFormik } from "formik";
 import Error from "../../shared/error/error.js";
 
 const Skills = () => {
