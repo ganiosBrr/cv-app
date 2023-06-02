@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "../button/button";
+import Button from "../../shared/button/button";
 import PortfolioInfo from "../portfolioInfo/portfolioInfo";
 
 import card_1 from "../../assets/images/card_1.png";
@@ -63,9 +63,7 @@ const Portfolio = () => {
           {buttonsData.map(({ name, label }) => (
             <li key={name} className="tabs-list__item">
               <Button
-                className={
-                  filter === name ? "portfolio__btn active" : "portfolio__btn"
-                }
+                className="portfolio__btn"
                 onClick={() => onFilter(name)}
                 text={label}
               />

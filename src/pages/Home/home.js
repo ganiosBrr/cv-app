@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import PhotoBox from "../../shared/photoBox/photoBox";
-import Button from "../../components/button/button";
+import Button from "../../shared/button/button";
 import { developerData } from "../../static-data/staticData";
 
 import "./home.scss";
