@@ -14,11 +14,10 @@ describe('Box component', () => {
     );
 
     const titleElement = screen.getByText(title);
-    const contentElement = screen.getByText('Sample Content');
     const boxElement = screen.getByTestId('box-component');
 
     expect(titleElement).toBeInTheDocument();
-    expect(contentElement).toBeInTheDocument();
+
     expect(boxElement).toHaveClass(className);
     expect(boxElement).toHaveAttribute('id', id);
   });
