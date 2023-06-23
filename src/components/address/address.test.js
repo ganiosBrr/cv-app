@@ -6,19 +6,19 @@ describe('Address component', () => {
   test('renders address items', () => {
     render(<Address />);
     const addressItems = screen.getAllByTestId('address-item');
-    expect(addressItems).toHaveLength(5);
+    expect(addressItems).toHaveLength(4);
   });
 
   test('renders address item with icon, content, and link', () => {
     render(<Address />);
     const phoneIcon = screen.getAllByTestId('icon');
-    expect(phoneIcon).toHaveLength(5);
+    expect(phoneIcon).toHaveLength(4);
 
-    const phoneContent = screen.getByText('500 342 242');
+    const phoneContent = screen.getByText('+77071480046');
     expect(phoneContent).toBeInTheDocument();
 
-    const phoneLink = screen.getByRole('link', { name: '500 342 242' });
+    const phoneLink = screen.getByRole('link', { name: '+77071480046' });
     expect(phoneLink).toBeInTheDocument();
-    expect(phoneLink).toHaveAttribute('href', 'tel:+500 342 242');
+    expect(phoneLink).toHaveAttribute('href', 'tel:+77071480046');
   });
 });

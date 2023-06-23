@@ -36,53 +36,6 @@ function App() {
     dispatch(fetchEducations());
   }, [dispatch]);
 
-  const content = [
-    {
-      component: <Info text={cvInfo} />,
-      className: "__info",
-      id: "info",
-      title: "About me",
-    },
-    {
-      component: <Timeline data={education} />,
-      className: "__timeline",
-      id: "education",
-      title: "Education",
-    },
-    {
-      component: <Expertise data={experienceData} />,
-      className: "__expirience",
-      id: "experience",
-      title: "Experience",
-    },
-    {
-      component: <Skills />,
-      className: "__skills",
-      id: "skills",
-      title: "Skills",
-    },
-    {
-      component: <Portfolio />,
-      className: "__portfolio",
-      id: "portfolio",
-      title: "Portfolio",
-    },
-    {
-      component: <Address />,
-      className: "__address",
-      id: "address",
-      title: "Contacts",
-    },
-    {
-      component: (
-        <Feedback photo="https://www.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg" />
-      ),
-      className: "__feedback",
-      id: "feedback",
-      title: "Feedback",
-    },
-  ];
-
   const handlePanelToggle = () => {
     setPanelRender((prevState) => !prevState);
   };
@@ -122,38 +75,63 @@ function App() {
             : "cv-content cv-content--left"
         }
       >
-        {content.map((item) => {
-          const errorMessage =
-            "Something went wrong; please review your server connection!";
-          if (item.id === "education") {
-            return (
-              <Box
-                title={item.title}
-                content={
-                  isLoading ? (
-                    <Spinner />
-                  ) : error ? (
-                    <Error message={errorMessage} className="error-wrapper" />
-                  ) : (
-                    item.component
-                  )
-                }
-                className={`cv-content${item.className}`}
-                id={`${item.id}-section`}
-                key={item.id}
-              />
-            );
+        <Box 
+          className="cv-content__info"
+          id="info-section"
+          title="About me">
+
+          <Info text={cvInfo}/> 
+        </Box>
+        <Box
+          className="cv-content__timeline"
+          id="education-section"
+          title="Education"
+      > 
+          {
+            isLoading ? (
+              <Spinner />
+            ) : error ? (
+              <Error message="Something went wrong; please review your server connection!" className="error-wrapper" />
+            ) : (
+              <Timeline data={education} />
+            )
           }
-          return (
-            <Box
-              title={item.title}
-              content={item.component}
-              className={`cv-content${item.className}`}
-              id={`${item.id}-section`}
-              key={item.id}
-            />
-          );
-        })}
+        </Box>
+        <Box 
+          className="cv-content__expirience"
+          id="experience-section"
+          title="Experience">
+
+          <Expertise data={experienceData}/> 
+        </Box>
+        <Box 
+          className="cv-content__skills"
+          id="skills-section"
+          title="Skills">
+
+          <Skills /> 
+        </Box>
+        <Box 
+          className="cv-content__portfolio"
+          id="portfolio-section"
+          title="Portfolio">
+
+          <Portfolio /> 
+        </Box>
+        <Box 
+          className="cv-content__address"
+          id="address-section"
+          title="Contacts">
+
+          <Address /> 
+        </Box>
+        <Box 
+          className="cv-content__feedback"
+          id="feedback-section"
+          title="Feedback">
+
+          <Feedback photo="https://www.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg" />
+        </Box>
       </div>
 
       <Button

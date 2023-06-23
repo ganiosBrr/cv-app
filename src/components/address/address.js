@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-  faTwitter,
-  faFacebookF,
-  faSkype,
+  faLinkedinIn,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
 import "./address.scss";
@@ -12,31 +11,25 @@ const Address = () => {
   const addressData = [
     {
       icon: <FontAwesomeIcon icon={faPhone} />,
-      content: "500 342 242",
-      href: "tel:+500 342 242",
+      content: "+77071480046",
+      href: "tel:+77071480046",
     },
     {
       icon: <FontAwesomeIcon icon={faEnvelope} />,
-      content: "office@kamsolutions.pl",
-      href: "mailto:office@kamsolutions.pl",
+      content: "nurpeisovganibek@gmail.com",
+      href: "mailto:nurpeisovganibek@gmail.com",
     },
     {
-      icon: <FontAwesomeIcon icon={faTwitter} />,
-      heading: "Twitter",
-      content: "https://twitter.com/wordpress",
-      href: "https://twitter.com/wordpress",
+      icon: <FontAwesomeIcon icon={faLinkedinIn} />,
+      heading: "LinkedIn",
+      content: "https://www.linkedin.com/in/ganibek-nurpeisov-69084425a",
+      href: "https://www.linkedin.com/in/ganibek-nurpeisov-69084425a",
     },
     {
-      icon: <FontAwesomeIcon icon={faFacebookF} />,
-      heading: "Facebook",
-      content: "https://www.facebook.com/facebook",
-      href: "https://www.facebook.com/facebook",
-    },
-    {
-      icon: <FontAwesomeIcon icon={faSkype} />,
-      heading: "Skype",
-      content: "kamsolutions.pl",
-      href: "skype:kamsolutions.pl",
+      icon: <FontAwesomeIcon icon={faGithub} />,
+      heading: "GitHub",
+      content: "https://github.com/ganiosBrr/",
+      href: "https://github.com/ganiosBrr/",
     },
   ];
 

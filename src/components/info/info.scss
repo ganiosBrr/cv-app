@@ -1,9 +1,14 @@
+@use "../../assets/styles/sass/abstracts/vars" as *;
+
 .cv {
   &__information {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
+    margin-left: 45px;
     margin-bottom: 50px;
+  }
+  &__information > li {
+    list-style-type: disc;
+  }
+  &__information > li::marker {
+    color: $base-color;
   }
 }
